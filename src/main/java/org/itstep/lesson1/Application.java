@@ -8,9 +8,10 @@ public class Application {
         System.out.println("Hello world");
 
         //(тип даних) (назва) (оператор) (значення)
-             int      number      =        25;
+             int      number      =         25;
         System.out.println(number);
         System.out.println(count);
+
     }
 }
 
