@@ -1,4 +1,4 @@
-package org.itstep.Lesson8.string;
+package org.itstep.lesson8.string;
 
 public class StringPart1 {
     public static void main(String[] args) {

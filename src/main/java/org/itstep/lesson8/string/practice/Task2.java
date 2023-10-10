@@ -1,4 +1,4 @@
-package org.itstep.Lesson8.string.practice;
+package org.itstep.lesson8.string.practice;
 
 import java.util.Scanner;
 

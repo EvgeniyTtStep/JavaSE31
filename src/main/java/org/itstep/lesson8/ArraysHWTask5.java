@@ -1,4 +1,4 @@
-package org.itstep.Lesson8;
+package org.itstep.lesson8;
 
 import java.util.Arrays;
 import java.util.Random;
