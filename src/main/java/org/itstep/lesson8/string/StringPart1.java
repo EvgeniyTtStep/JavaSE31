@@ -57,7 +57,6 @@ public class StringPart1 {
 
 
         //==== indexOf() ====
-
         int index = password.indexOf("ABC");
         System.out.println("index = " + index);
 
@@ -67,7 +66,6 @@ public class StringPart1 {
 
 
         // ==== replace() ====
-
         String name = "Hello Jack";
         System.out.println(name.replace("Jack", "Max"));
 
