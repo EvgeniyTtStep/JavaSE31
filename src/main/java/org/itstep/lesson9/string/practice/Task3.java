@@ -13,10 +13,16 @@ public class Task3 {
         System.out.println("Enter string with white spaces");
         String str = sc.nextLine();
         int wordsLength = 0;
-        String[]strings = str.strip().split("[ ]");
+        int wordCounter = 0;
+        String[] strings = str.strip().split("[ ]");
 
         for (int i = 0; i < strings.length; i++) {
-            System.out.println(strings[i]);
+            if (!strings[i].isBlank()) {
+                System.out.println(strings[i]);
+                wordsLength += strings[i].length();
+                wordCounter++;
+            }
         }
+        System.out.println("Avg sise is = " +  wordsLength/wordCounter);
     }
 }
