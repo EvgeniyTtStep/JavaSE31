@@ -19,7 +19,8 @@ public class Task5Practice {
         //+- Змініть текст таким чином, щоб кожне речення починалася з
         //великої літери.
         String newLorem = "";
-        String[] sentences = lorem.split("[.!?]");
+        //String[] sentences = lorem.split("[.!?]");
+        String[] sentences = lorem.split("(?<=\\.|!|\\?)");
         for (int i = 0; i < sentences.length; i++) {
             String sentence = sentences[i].strip();
             char[] chars = sentence.toCharArray();
@@ -27,10 +28,10 @@ public class Task5Practice {
                 chars[0] = Character.toUpperCase(sentence.charAt(0));
                 sentence = String.valueOf(chars);
             }
-            //System.out.println(sentence);
+            System.out.println(sentence);
             newLorem += sentence + ". ";
         }
-        System.out.println(newLorem);
+        //System.out.println(newLorem);
 
         // Підрахуйте кількість цифр у тексті.
         // Підрахуйте кількість розділових знаків у тексті.

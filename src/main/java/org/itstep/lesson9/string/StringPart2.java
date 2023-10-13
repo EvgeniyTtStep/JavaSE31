@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class StringPart2 {
     public static void main(String[] args) {
 
-        String str = "\s\s\s\s\sHello Java    ";
+        String str = "\s\s\s\s\sHello Java     ";
         System.out.println("str = " + str);
 
         //===== trim() =====
