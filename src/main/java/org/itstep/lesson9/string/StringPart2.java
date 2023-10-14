@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class StringPart2 {
     public static void main(String[] args) {
 
-        String str = "\s\s\s\s\sHello Java     ";
+        String str = "     Hello Java     ";
         System.out.println("str = " + str);
 
         //===== trim() =====
@@ -25,12 +25,15 @@ public class StringPart2 {
         //String colorStrip = color.strip();
         //String colorStripLower = colorStrip.toLowerCase();
 
+
+
         String[] colors =
                 color
                         .strip()
                         .toLowerCase()
                         .replace("red", "pink")
                         .split("[ ,:-]");
+
 
         for (int i = 0; i < colors.length; i++) {
             if (!colors[i].isBlank()) {

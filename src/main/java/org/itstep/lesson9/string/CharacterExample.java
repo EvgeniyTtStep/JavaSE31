@@ -5,10 +5,11 @@ public class CharacterExample {
 
         int i = 10;
         Integer a = i;
+
         System.out.println(Integer.MAX_VALUE);
         System.out.println(Integer.MIN_VALUE);
-
         System.out.println(Character.MAX_VALUE);
+
 
         //методи перевіряють символи
         System.out.println(Character.isDigit('7'));
