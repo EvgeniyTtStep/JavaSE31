@@ -5,7 +5,7 @@ public class BuilderBufferExample {
 
         String str = "Hello";
         str = str + " " + "Jack";
-        str +=  " How are you";
+        str += " How are you";
 
         System.out.println(str);
 
@@ -14,15 +14,10 @@ public class BuilderBufferExample {
         stringBuilder.append(" ");
         stringBuilder.append("I am fine!!!!!!!");
         System.out.println("capacity() = " + stringBuilder.capacity());
-
+        stringBuilder.delete(6, 11);
+        stringBuilder.insert(6, "Max ");
+        stringBuilder.reverse();
         System.out.println(stringBuilder);
 
-
-
-
-
-
-
     }
-
 }
