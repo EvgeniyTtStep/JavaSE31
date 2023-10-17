@@ -11,6 +11,7 @@ public class MethodsExample {
         long res1 = sum1();
         System.out.println("res = " + res);
         System.out.println("res1 = " + res1);
+
     }
 
 
