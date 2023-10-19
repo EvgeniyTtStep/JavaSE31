@@ -16,4 +16,13 @@ public class MethodsTask5 {
         } return
                 sum;
     }
+
+    public static int summa(int a, byte b){
+        return 0;
+    }
+
+
+
+
+
 }
