@@ -14,14 +14,32 @@ public class Practice2 {
         int credit = sc.nextInt();
         System.out.println("Enter month sum");
         int monthSum = sc.nextInt();
-        int monthNum = 0;
+        int monthCounter = 0;
 
+        //fromLoop(credit, monthNum, monthSum);
+        credit(credit, monthSum, monthCounter);
+    }
+
+    public static void fromLoop(int credit, int monthCounter, int monthSum) {
         while (credit > 0) {
-            monthNum++;
+            monthCounter++;
             credit -= monthSum;
         }
 
-        System.out.println("Кредит погашено за " + monthNum + " місяців");
+        System.out.println("Кредит погашено за " + monthCounter + " місяців");
+    }
+
+
+    public static void credit(int credit, int monthSum, int monthCounter){
+        credit-=monthSum;
+        System.out.println("Залишилось погасити " + credit);
+        if(credit < 0){
+            System.out.println("Кредит погашено за " + monthCounter + " місяців");
+        }else {
+            monthCounter++;
+            credit(credit, monthSum, monthCounter);
+        }
 
     }
+
 }
