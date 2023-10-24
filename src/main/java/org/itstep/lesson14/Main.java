@@ -11,10 +11,10 @@ public class Main {
         developer.setTechnologies("Java");
 
 
-//        System.out.println(developer.getName());
-//        System.out.println(developer.getAge());
-//        System.out.println(developer.getExperience());
-//        System.out.println(developer.getTechnologies());
+        System.out.println(developer.getName());
+        System.out.println(developer.getAge());
+        System.out.println(developer.getExperience());
+        System.out.println(developer.getTechnologies());
 
 
         System.out.println(developer);
