@@ -13,5 +13,10 @@ public class ShapeMain {
         rectengle.setY(27);
 
 
+        Shape square = new Shape();
+        square.setX(5);
+        square.setY(5);
+
+
     }
 }

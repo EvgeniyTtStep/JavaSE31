@@ -29,4 +29,12 @@ public class Shape {
     public void setY(int y) {
         this.y = y;
     }
+
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }
