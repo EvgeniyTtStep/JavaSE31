@@ -5,7 +5,7 @@ public class Outer {
 
     static class Nested {
         public void showName(){
-            //System.out.println(outName);
+            System.out.println("Nested name");
         }
     }
 }
