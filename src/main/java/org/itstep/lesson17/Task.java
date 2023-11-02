@@ -22,8 +22,15 @@ public class Task {
 
         Mercedes mercedes3 = new Mercedes();
 
-        ToyCar toyCar = new ToyCar();
+
+        ToyCar toyCar = new ToyCar();//композиция
         toyCar.drive();
+
+        Car nissan = new Car();
+
+        ToyCar toyCar1 = new ToyCar(nissan);//агрегация
+        toyCar1.drive();
+
 
         //Динамически полиморфизм(диспетчеризация, позднее связіваение)
         System.out.println("================");

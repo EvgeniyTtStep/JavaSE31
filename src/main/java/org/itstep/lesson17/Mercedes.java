@@ -12,6 +12,7 @@ public class Mercedes extends Car{
         this.complect = complect;
     }
 
+    @Override
     public void drive() {
         System.out.println("mercedes drive");
     }

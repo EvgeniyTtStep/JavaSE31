@@ -17,7 +17,7 @@ public abstract class Vehicle implements Transport,Fuel {
 
     @Override
     public void drive(){
-        System.out.println("drive");
+        System.out.println("Vehicle drive");
     }
 
     @Override

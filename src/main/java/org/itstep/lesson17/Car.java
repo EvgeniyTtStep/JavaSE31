@@ -7,9 +7,7 @@ public class Car extends Vehicle {
     private String engine;
 
     public Car() {
-
     }
-
 
     public Car(String color, String model, String number) {
         super(color, model);
@@ -38,6 +36,7 @@ public class Car extends Vehicle {
         this.engine = engine;
     }
 
+    @Override
     public void drive() {
         System.out.println("car drive");
     }
