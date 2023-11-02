@@ -47,7 +47,19 @@ public class Car extends Vehicle {
         System.out.println("car stop");
     }
 
+
+
     public  void showNumber(){
         System.out.println("sow car number");
+    }
+
+    @Override
+    public void middleMethod() {
+        super.middleMethod();
+    }
+
+    @Override
+    public void abstractMethod() {
+        System.out.println("Car abstract method");
     }
 }

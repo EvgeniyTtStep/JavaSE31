@@ -22,10 +22,27 @@ public class Task {
 
         Mercedes mercedes3 = new Mercedes();
 
-
         ToyCar toyCar = new ToyCar();
         toyCar.drive();
 
+        //Динамически полиморфизм(диспетчеризация, позднее связіваение)
+        System.out.println("================");
+        Vehicle vehicle;//создать экземпляр абстрактного класса невозможно
+
+        vehicle = new Car();
+
+        vehicle.drive();
+
+        vehicle = new Mercedes();
+
+        vehicle.drive();
+
+        System.out.println("Экземпляр на основе интерфейса");
+        Transport transport = new Mercedes();
+        Fuel fuel = new Mercedes();
+
+        transport.drive();
+        fuel.setFuel();
 
     }
 }
