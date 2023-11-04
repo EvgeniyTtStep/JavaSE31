@@ -9,6 +9,6 @@ public class Main {
         tempStr.show();
 
 
-        NumberTemplate<Number> numberTemplate = new NumberTemplate<>(12.6F);
+        NumberTemplate<Number> numberTemplate = new NumberTemplate<>(12.5F);
     }
 }
