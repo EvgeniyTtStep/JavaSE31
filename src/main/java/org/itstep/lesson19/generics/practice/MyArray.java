@@ -1,5 +1,8 @@
 package org.itstep.lesson19.generics.practice;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -22,16 +25,33 @@ public class MyArray<T extends Number> {
     T[] arr;
 
 
-    public void fillKeyBoardArr() {
+    public void fillKeyBoardArr(Class<T> clazz) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter size");
+        int size = scanner.nextInt();
+        arr = (T[]) Array.newInstance(clazz, size);
         for (int i = 0; i < arr.length; i++) {
-
+            Object tmp = null;
+            if (clazz.isAssignableFrom(Integer.class)) {
+                tmp = scanner.nextInt();
+            } else if (clazz == Double.class) {
+                tmp = scanner.nextDouble();
+            }
+//          tempArr[i] = (T)tmp;
+            arr[i] = clazz.cast(tmp);
         }
     }
 
     public void fillRandomArr() {
         Random random = new Random();
-
     }
+}
 
+
+class Main{
+    public static void main(String[] args) {
+        MyArray<Double> myArray = new MyArray<>();
+        myArray.fillKeyBoardArr(Double.class);
+        System.out.println(Arrays.toString(myArray.arr));
+    }
 }
