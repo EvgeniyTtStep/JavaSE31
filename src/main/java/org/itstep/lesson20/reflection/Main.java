@@ -49,12 +49,13 @@ public class Main extends Object {
         }
 
 
-        Method[] methods = animalClass.getMethods();
+        Method[] methods = animalClass.getDeclaredMethods();
 
         for (Method method : methods) {
-            TypeVariable<Method>[] typeParameters = method.getTypeParameters();
-            for (TypeVariable<Method> typeParameter : typeParameters) {
-                System.out.println("typeParameter.getName() = " + typeParameter.getName());
+            Parameter[] parameters = method.getParameters();
+            for (Parameter parameter : parameters) {
+                System.out.println("method parameter.getName() = " + parameter);
+                System.out.println("method parameter.getName() = " + parameter.getType());
                 System.out.println("============");
             }
         }
