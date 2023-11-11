@@ -8,13 +8,17 @@ import java.lang.reflect.*;
 import java.util.List;
 
 public class Main extends Object {
-    public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException {
+    public static void main(String[] args) {
         Animal animal = new Animal();
         System.out.println(animal);
 
-//        Class<? extends Animal> aClass = animal.getClass();
+//      Class<? extends Animal> aClass = animal.getClass();
 //        Class<Animal> animalClass = Animal.class;
-//        Class clazz = Class.forName("org.itstep.lesson20.reflection.Animal");
+        try {
+            Class clazz = Class.forName("org.itstep.lesson20.reflection.Animal");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         Class<Animal> animalClass = Animal.class;
         Field[] fields = animalClass.getDeclaredFields();
@@ -26,8 +30,16 @@ public class Main extends Object {
 
             if (!field.getName().equals("name")) {
                 field.setAccessible(true);
-                field.setInt(animal, 50);
-                System.out.println("new age = " + field.getInt(animal));
+                try {
+                    field.setInt(animal, 50);
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
+                try {
+                    System.out.println("new age = " + field.getInt(animal));
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
             }
 
             System.out.println("=============");
