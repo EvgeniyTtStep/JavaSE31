@@ -24,6 +24,8 @@ public class App2 {
                 System.out.println(element);
             }
             System.out.println(e.getMessage());
+        }catch (ArithmeticException e) {
+            throw new RuntimeException(e);
         }
 
 

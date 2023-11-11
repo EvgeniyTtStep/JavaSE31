@@ -10,6 +10,9 @@ public abstract class CoffeeMachine implements ICoffeeMachine{
     private int currentGarbageLevel;
 
 
+    public CoffeeMachine() {
+    }
+
     public CoffeeMachine(int maxWaterLevel, int maxCoffeeLevel, int maxGarbageLevel) {
         this.maxWaterLevel = maxWaterLevel;
         this.maxCoffeeLevel = maxCoffeeLevel;
