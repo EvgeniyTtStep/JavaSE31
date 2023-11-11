@@ -42,9 +42,65 @@ public class MyArray<T extends Number> {
         }
     }
 
+
     public void fillRandomArr() {
         Random random = new Random();
     }
+
+    public <T> void sortHi(T[] mas) {
+        Arrays.sort(mas);
+        System.out.println("Массив отсортированный по возрастаанию : " + Arrays.toString(mas));
+    }
+
+    public <T> void sortLow(T[] mas) {
+        Arrays.sort(mas);
+        T num;
+        for (int i = 0; i < mas.length / 2; i++) {
+            num = mas[i];
+            mas[i] = mas[mas.length - i - 1];
+            mas[mas.length - i - 1] = num;
+        }
+        System.out.println("Массив отсортированный по убыванию: " + Arrays.toString(mas));
+    }
+
+    public void binary(T[] mas, T a) {
+        int num = 0;
+        int index = 0;
+        Arrays.sort(mas);
+        for (T value : mas) {
+            if (a.equals(value)) {
+                index = 1;
+                num += 1;
+            }
+        }
+        if (index == 1) {
+            System.out.println("Индекс заданной переменной а = " + a + " будет равно :" + Arrays.binarySearch(mas, a));
+            System.out.println("Всего совпадений : " + num);
+        } else {
+            System.out.println("Значение переменной а = " + a + " в нашем массиве отсутствует");
+        }
+    }
+
+    public <T> T[] changeElement(T[] mas, int index, Class<T> clazz) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите значение переменной , на которую надо заменить :");
+        Object element = null;
+        if (clazz == Integer.class && scanner.hasNextInt()) {
+            element = scanner.nextInt();
+            mas[index] = (T) element;
+        }
+        if (clazz == Double.class && scanner.hasNextDouble()) {
+            element = scanner.nextDouble();
+            mas[index] = (T) element;
+        }
+        if (clazz == String.class && scanner.hasNextLine()) {
+            element = scanner.nextLine();
+            mas[index] = (T) element;
+        }
+        return mas;
+    }
+
+
 }
 
 
