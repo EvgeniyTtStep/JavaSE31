@@ -12,7 +12,6 @@ public class Menu {
         System.out.println("0. Вихід");
 
 
-
         //==== Завдання ====
         //=== 1 додати обробку InputMismatchException через try catch ===
         //=== 2 додати цикл для можливості повтору меню ===
@@ -55,8 +54,8 @@ public class Menu {
 
 
             //=== 5 пропищіть виклик всіх необхідних методів ===
-            switch (choice){
-
+            switch (choice) {
+                case 3 -> selectMachine.makeEspresso();
             }
         }
     }

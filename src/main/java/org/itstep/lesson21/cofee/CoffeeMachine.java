@@ -1,6 +1,6 @@
 package org.itstep.lesson21.cofee;
 
-public abstract class CoffeeMachine implements ICoffeeMachine{
+public abstract class CoffeeMachine implements ICoffeeMachine {
     private int maxWaterLevel;
     private int maxCoffeeLevel;
     private int maxGarbageLevel;
@@ -41,6 +41,21 @@ public abstract class CoffeeMachine implements ICoffeeMachine{
 
     @Override
     public void cleanGarbageBox() {
+
+    }
+
+    @Override
+    public void addCoffee(int amount) {
+        if (currentCoffeeLevel + amount > maxCoffeeLevel) {
+            System.out.println("ПОМИЛКА: Забагато кави");
+        } else {
+            currentCoffeeLevel += amount;
+            System.out.println("Кава додана успішно");
+        }
+    }
+
+    @Override
+    public void addWater(int amount) {
 
     }
 }
