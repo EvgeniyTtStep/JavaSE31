@@ -2,7 +2,7 @@ package org.itstep.lesson24.set;
 
 import java.util.*;
 
-class Developer extends Object{
+class Developer implements Comparable<Developer> {
     String name;
     int salary;
 
@@ -15,7 +15,7 @@ class Developer extends Object{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Developer developer)) return false;
-        return salary == developer.salary && Objects.equals(name, developer.name);
+        return this.salary == developer.salary && Objects.equals(name, developer.name);
     }
 
     @Override
@@ -29,6 +29,11 @@ class Developer extends Object{
                 "name='" + name + '\'' +
                 ", salary=" + salary +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Developer developer) {
+        return this.name.compareTo(developer.name);
     }
 }
 
@@ -48,20 +53,32 @@ public class SetExample {
         System.out.println(integerSet);
 
         for (Integer item : integerSet) {
-            System.out.print(item+" ");
+            System.out.print(item + " ");
             System.out.println(item.hashCode());
         }
 
 
         Set<Developer> developers = new HashSet<>();
-        developers.add(new Developer("Jack", 1000));
-        developers.add(new Developer("Jack", 1000));
-        developers.add(new Developer("Jack", 1000));
-        developers.add(new Developer("Jack", 1001));
+        developers.add(new Developer("J", 1000));
+        developers.add(new Developer("I", 1031));
+        developers.add(new Developer("Max", 1001));
+        developers.add(new Developer("Alex", 1002));
+        developers.add(new Developer("Alex", 1005));
+        developers.add(new Developer("Zohan", 1003));
+        developers.add(new Developer("Bob", 1004));
 
         for (Developer developer : developers) {
             System.out.println(developer.name + " " + developer.salary + " " + developer.hashCode());
         }
+
+        System.out.println("============ TreeSet =============");
+
+
+        Set<Developer> developerTree = new TreeSet<>(developers);
+        for (Developer developer : developerTree) {
+            System.out.println(developer.name + " " + developer.salary);
+        }
+
 
     }
 }
