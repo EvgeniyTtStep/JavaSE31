@@ -59,8 +59,11 @@ public class SetExample {
 
 
         Set<Developer> developers = new HashSet<>();
+        //developers.add(null);
         developers.add(new Developer("J", 1000));
         developers.add(new Developer("I", 1031));
+        developers.add(new Developer("Max", 1001));
+        developers.add(new Developer("Max", 1001));
         developers.add(new Developer("Max", 1001));
         developers.add(new Developer("Alex", 1002));
         developers.add(new Developer("Alex", 1005));

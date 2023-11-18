@@ -58,6 +58,9 @@ public class TreeSetExample {
         javaDeveloper.add(new JavaDeveloper("Zohan", 1000));
 
 
+
+
+
 //        for (JavaDeveloper developer : javaDeveloper) {
 //            System.out.println(developer.getName() + " " + developer.getSalary());
 //        }
