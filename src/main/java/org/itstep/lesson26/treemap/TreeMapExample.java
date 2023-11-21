@@ -2,14 +2,13 @@ package org.itstep.lesson26.treemap;
 
 import org.checkerframework.checker.units.qual.A;
 
-import java.util.Comparator;
-import java.util.Map;
-import java.util.Objects;
-import java.util.TreeMap;
+import java.util.*;
 
 class Animal  {
     private String name;
     private int age;
+
+    //private Set<Film> film;
 
     public Animal(String name, int age) {
         this.name = name;
@@ -64,5 +63,11 @@ public class TreeMapExample {
         for (Map.Entry<Animal, Integer> animalIntegerEntry : animalMap.entrySet()) {
             System.out.println(animalIntegerEntry);
         }
+
+        //приклад використання Map
+//        String[]colors = {"red", "green", "blue"};
+//        Map<String, Integer> colorMap = new HashMap<>(Map.of());
+//        colorMap.get("red");
+
     }
 }

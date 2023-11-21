@@ -1,6 +1,9 @@
 package org.itstep.lesson25.map.practice;
 
+import java.util.Comparator;
 import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class MethodsDB {
 
@@ -45,6 +48,7 @@ public class MethodsDB {
     public void removeFine(String name, String typeFine) {
         if (typeFine != null && !typeFine.isBlank()) {
             Set<Human> humans = dataBaseFine.getHumans();
+
             for (Human human : humans) {
                 if (human.getName().equals(name) && human.getFine().getFineMap().get(typeFine) != null && human.getFine().getFineMap().get(typeFine) > 0) {
                     human.getFine().getFineMap().remove(typeFine);
