@@ -41,4 +41,21 @@ public class MethodsDB {
             }
         }
     }
+
+    public void removeFine(String name, String typeFine) {
+        if (typeFine != null && !typeFine.isBlank()) {
+            Set<Human> humans = dataBaseFine.getHumans();
+            for (Human human : humans) {
+                if (human.getName().equals(name) && human.getFine().getFineMap().get(typeFine) != null && human.getFine().getFineMap().get(typeFine) > 0) {
+                    human.getFine().getFineMap().remove(typeFine);
+                    System.out.println(human);
+                }
+            }
+        }
+    }
+
+    public void addHuman(String name, int inn, String city) {
+        Set<Human> humans = dataBaseFine.getHumans();
+        humans.add(new Human(name, inn, city, new Fine()));
+    }
 }

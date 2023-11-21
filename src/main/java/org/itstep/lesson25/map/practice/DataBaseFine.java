@@ -30,24 +30,24 @@ public class DataBaseFine {
 
     public void defaultDataBaseFine(){
         Fine fine1 = new Fine();
-        fine1.fillFines("Fine 1", 20);
-        fine1.fillFines("Fine 2", 15);
-        fine1.fillFines("Fine 3", 27);
+        fine1.fillFines("Fine1", 20);
+        fine1.fillFines("Fine2", 15);
+        fine1.fillFines("Fine3", 27);
         humans.add(new Human("Jack", 1111, "Kyiv", fine1));
 
 
         Fine fine2 = new Fine();
-        fine2.fillFines("Fine 4", 120);
-        fine2.fillFines("Fine 2", 15);
-        fine2.fillFines("Fine 5", 30);
-        fine2.fillFines("Fine 6", 10);
+        fine2.fillFines("Fine4", 120);
+        fine2.fillFines("Fine2", 15);
+        fine2.fillFines("Fine5", 30);
+        fine2.fillFines("Fine6", 10);
         humans.add(new Human("Max", 2222, "Dnipro", fine2));
 
 
 
         Fine fine3 = new Fine();
-        fine3.fillFines("Fine 4", 120);
-        fine3.fillFines("Fine 5", 30);
+        fine3.fillFines("Fine4", 120);
+        fine3.fillFines("Fine5", 30);
         humans.add(new Human("Tomas", 3333, "Lviv", fine3));
     }
 }

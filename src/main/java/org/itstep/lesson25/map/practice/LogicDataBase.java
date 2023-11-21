@@ -25,6 +25,29 @@ public class LogicDataBase {
                     String typeFine = scanner.nextLine();
                     methods.printUsersByFineType(typeFine);
                 }
+                case 5 -> {
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.println("Enter new name");
+                    String name = scanner.nextLine();
+
+                    System.out.println("Enter inn");
+                    int inn = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Enter city");
+                    String city = scanner.nextLine();
+
+                    methods.addHuman(name, inn, city);
+                }
+                case 7 -> {
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.println("Enter name");
+                    String name = scanner.nextLine();
+                    System.out.println("Enter type of fine");
+                    String typeFine = scanner.nextLine();
+                    methods.removeFine(name, typeFine);
+
+                }
             }
         }
     }
