@@ -1,7 +1,9 @@
 package org.itstep.lesson27;
 
 import java.util.ArrayList;
+import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.function.ToIntFunction;
 import java.util.stream.Stream;
 
 public class StreamApiExample {
@@ -40,6 +42,23 @@ public class StreamApiExample {
         List<Integer> integerList = mapExample();
         minMaxExample(integerList);
         countEx(integerList);
+        avarageEx(integerList);
+    }
+
+    private static void avarageEx(List<Integer> integerList) {
+
+
+        IntSummaryStatistics summaryStatistics = integerList.stream()
+                .mapToInt(Integer::valueOf)
+                .summaryStatistics();
+
+
+        System.out.println("summaryStatistics.getAverage() = " + summaryStatistics.getAverage());
+        System.out.println("summaryStatistics.getMax() = " + summaryStatistics.getMax());
+        System.out.println("summaryStatistics.getMin() = " + summaryStatistics.getMin());
+        System.out.println("summaryStatistics.getSum() = " + summaryStatistics.getSum());
+        System.out.println("summaryStatistics.getCount() = " + summaryStatistics.getCount());
+
     }
 
     private static void countEx(List<Integer> integerList) {

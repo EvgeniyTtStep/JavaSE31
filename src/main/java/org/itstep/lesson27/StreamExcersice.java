@@ -1,11 +1,9 @@
 package org.itstep.lesson27;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Predicate;
+import java.util.function.ToDoubleFunction;
+import java.util.function.ToIntFunction;
 
 public class StreamExcersice {
 
@@ -78,6 +76,8 @@ public class StreamExcersice {
     public static void main(String[] args) {
         // TODO: тестировать здесь
         ex01().forEach(System.out::println);
+        System.out.println("avarage = " + ex02());
+        System.out.println("avarage = " + ex021());
 
     }
 
@@ -96,7 +96,23 @@ public class StreamExcersice {
         // TODO: Задание 2
         // Найти средний возраст среди мужчин
 
-        return null;
+        return students.stream()
+                .filter(student -> student.sex == Sex.MAN)
+                .mapToDouble(student -> student.age)
+                .average()
+                .orElse(Double.NaN);
+    }
+
+    static Double ex021() {
+        // TODO: Задание 2
+        // Найти средний возраст среди мужчин
+
+        IntSummaryStatistics summaryStatistics = students.stream()
+                .filter(student -> student.sex == Sex.MAN)
+                .mapToInt(student -> student.age)
+                .summaryStatistics();
+
+        return summaryStatistics.getAverage();
     }
 
     static Long ex03() {
