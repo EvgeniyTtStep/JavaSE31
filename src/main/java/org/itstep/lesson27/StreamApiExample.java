@@ -1,15 +1,10 @@
 package org.itstep.lesson27;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Lesson27 {
+public class StreamApiExample {
 
     static List<String> strings = new ArrayList<>();
 
@@ -42,19 +37,62 @@ public class Lesson27 {
         filterEx();
         sorting();
         System.out.println(mapExample());
+        List<Integer> integerList = mapExample();
+        minMaxExample(integerList);
+        countEx(integerList);
     }
 
-    private static List<Integer> mapExample() {
-        System.out.println("map");
-/*        List<Integer> integerList = new ArrayList<>();
-        for (String string : strings) {
-            if (string.length() == 4) {
-                integerList.add(Integer.parseInt(string.substring(3)));
+    private static void countEx(List<Integer> integerList) {
+        System.out.println("count");
+/*        int count = 0;
+        for (Integer integer : integerList) {
+            if (integer%2 == 0){
+                count++;
             }
         }*/
 
 
-        List<Integer> integerList = strings.stream()
+        long count = integerList
+                .stream()
+                .filter(integer -> integer % 2 == 0)
+                .count();
+
+        System.out.println("count = " + count);
+    }
+
+    private static void minMaxExample(List<Integer> integerList) {
+        System.out.println("min max");
+        int max = integerList.get(0);
+        int min = integerList.get(0);
+//        for (Integer integer : integerList) {
+//            if (Integer.compare(integer, max) > 0){
+//                max = integer;
+//            }
+//            if (Integer.compare(integer, min) < 0){
+//                min = integer;
+//            }
+//        }
+        max = integerList.stream().max(Integer::compareTo).get();
+        min = integerList.stream().min(Integer::compareTo).get();
+
+
+        System.out.println("max = " + max);
+        System.out.println("min = " + min);
+
+    }
+
+    private static List<Integer> mapExample() {
+        System.out.println("map");
+/*      List<Integer> integerList = new ArrayList<>();
+        for (String string : strings) {
+            if (string.length() == 4) {
+                integerList.add(Integer.parseInt(string.substring(3)));
+            }
+}*/
+
+
+        List<Integer> integerList = strings
+                .stream()
                 .filter(s -> s.length() == 4)
                 .map(s -> Integer.parseInt(s.substring(3)))
                 .toList();
@@ -65,12 +103,12 @@ public class Lesson27 {
 
     private static void sorting() {
         System.out.println("sorting");
-/**        strings.sort(String::compareTo);
- for (String string : strings) {
- if(string.startsWith("a")){
- System.out.println(string);
- }
- }*/
+/*        strings.sort(String::compareTo);
+        for (String string : strings) {
+            if (string.startsWith("a")) {
+                System.out.println(string);
+            }
+        }*/
 
 
         strings
@@ -83,11 +121,11 @@ public class Lesson27 {
 
     private static void filterEx() {
         System.out.println("filter");
-/**        for (String string : strings) {
- if (string.startsWith("a")){
- System.out.println(string);
- }
- }*/
+/*        for (String string : strings) {
+            if (string.startsWith("a")) {
+                System.out.println(string);
+            }
+        }*/
 
         List<String> collect = strings
                 .stream()
@@ -99,11 +137,10 @@ public class Lesson27 {
     }
 
     private static void showList() {
-/**    //Java
- for (String string : strings) {
- System.out.println(string);
- }
- */
+
+/*        for (String string : strings) {
+            System.out.println(string);
+        }*/
 
         //stream
         strings
