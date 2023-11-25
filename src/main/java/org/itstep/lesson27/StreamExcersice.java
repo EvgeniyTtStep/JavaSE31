@@ -78,6 +78,10 @@ public class StreamExcersice {
         ex01().forEach(System.out::println);
         System.out.println("avarage = " + ex02());
         System.out.println("avarage = " + ex021());
+        System.out.println("sorted = " + ex04());
+        Student student = ex051();
+
+        System.out.println("Name = " + student.getName());
 
     }
 
@@ -128,8 +132,11 @@ public class StreamExcersice {
     static List<Student> ex04() {
         // TODO: Задание 4
         // Отсортировать студентов по имени в обратном алфавитном порядке
+        return students
+                .stream()
+                .sorted((o1, o2) -> o2.getName().compareTo(o1.getName()))
+                .toList();
 
-        return null;
     }
 
     static Student ex05() {
@@ -138,6 +145,18 @@ public class StreamExcersice {
 
         return null;
     }
+
+
+    static Student ex051() {
+        //  TODO: Задание 5
+        //  найти студента с максимальным возрастомOptional<Student>
+
+        return students
+                .stream()
+                .max(Comparator.comparingInt(Student::getAge))
+                .orElse(new Student("John", 18, Sex.MAN));
+    }
+
 
     static Student ex06() {
         // TODO: Задание 6
