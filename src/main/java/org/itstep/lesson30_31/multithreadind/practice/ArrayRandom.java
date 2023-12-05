@@ -1,4 +1,4 @@
-package org.itstep.lesson30.multithreadind.practice;
+package org.itstep.lesson30_31.multithreadind.practice;
 
 import java.util.Arrays;
 import java.util.Random;

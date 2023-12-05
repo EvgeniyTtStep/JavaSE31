@@ -1,4 +1,4 @@
-package org.itstep.lesson30.multithreadind;
+package org.itstep.lesson30_31.multithreadind;
 
 import java.util.concurrent.atomic.AtomicLong;
 

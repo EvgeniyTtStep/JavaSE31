@@ -1,4 +1,4 @@
-package org.itstep.lesson30.multithreadind.practice;
+package org.itstep.lesson30_31.multithreadind.practice;
 
 //Завдання 1:
 //Користувач вводить з клавіатури значення в масив, після чого
