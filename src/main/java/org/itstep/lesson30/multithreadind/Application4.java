@@ -8,7 +8,7 @@ public class Application4 {
         Account1 account1 = new Account1(0);
 
         new Thread(() -> {
-            for (int i = 0; i < 50_000; i++) {
+            for (int i = 0; i < 50_000_000; i++) {
                 account1.deposit(1);
             }
         }).start();
@@ -16,17 +16,11 @@ public class Application4 {
 
         System.out.println("balance = " + account1.getBalance());
 
-        //account1.withdraw(50_000);
-        account1.withdraw(50_000);
+        System.out.println("Call waitAndWithdraw...");
+        account1.waitAndWithdraw(50_000_000);
+        //account1.withdraw(50_000_000);
 
         System.out.println("balance = " + account1.getBalance());
-
-
-
-
-
-
-
     }
 
 }
