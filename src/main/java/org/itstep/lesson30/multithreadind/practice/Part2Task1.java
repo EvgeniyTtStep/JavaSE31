@@ -2,6 +2,7 @@ package org.itstep.lesson30.multithreadind.practice;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 //Завдання 1:
 //При старті додатку запускаються три потоки. Перший потік
@@ -14,7 +15,7 @@ import java.util.Random;
 public class Part2Task1 {
     public static void main(String[] args) throws InterruptedException {
 
-        int[] arr = new int[100];
+        int[] arr = new int[5];
         ArrThread arrThread = new ArrThread(arr);
 
         arrThread.threads();
@@ -42,21 +43,34 @@ public class Part2Task1 {
         }
 
         public void threads() throws InterruptedException {
-            Thread fillArray = new Thread(() -> {
-                Random random = new Random();
+            AtomicBoolean done = new AtomicBoolean(false);
 
+            Thread fillArray = new Thread(() -> {
+                synchronized (this) {
+                    Random random = new Random();
                     for (int i = 0; i < arr.length; i++) {
                         arr[i] = random.nextInt(10, 100);
-
+                    }
+                    notifyAll();
+                    done.set(true);
                 }
             });
 
 
             Thread sumArray = new Thread(() -> {
+                synchronized (this) {
+                    try {
+                        while (done.get() == false) {
+                            wait();
+                        }
 
-                    for (int i = 0; i < arr.length; i++) {
-                        sum += arr[i];
+                        for (int i = 0; i < arr.length; i++) {
+                            sum += arr[i];
+                        }
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
                     }
+                }
 
             });
 
