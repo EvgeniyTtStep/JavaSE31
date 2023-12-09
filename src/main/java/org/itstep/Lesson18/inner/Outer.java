@@ -1,7 +1,6 @@
 package org.itstep.Lesson18.inner;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class Outer {
     private String outName;

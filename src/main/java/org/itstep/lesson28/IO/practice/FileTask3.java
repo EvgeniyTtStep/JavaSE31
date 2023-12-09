@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static org.openqa.selenium.remote.http.Contents.reader;
 
 public class FileTask3 {
     //Завдання 3:
