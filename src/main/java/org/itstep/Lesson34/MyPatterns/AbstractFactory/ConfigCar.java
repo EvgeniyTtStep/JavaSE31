@@ -4,20 +4,15 @@ public class ConfigCar {
 
     CarFactory carFactory;
 
-    static Ingener ingener;
-    static  Worker worker;
 
-
-    static void  configCar(CarFactory carFactory){
-                 ingener = carFactory.getIngener();
-         worker = carFactory.getWorker();
-
+    void configCar(CarFactory carFactory) {
+        this.carFactory = carFactory;
     }
 
 
-   static void carInfo(){
-        ingener.createCar();
-        worker.assembleTheCar();
+    void carInfo() {
+        carFactory.getIngener().createCar();
+        carFactory.getWorker().assembleTheCar();
     }
 
 
