@@ -26,7 +26,7 @@ class Borrowable extends Decorator
 	@Override
 	public void Show() {
 		
-		for (Iterator<String> ptr = users.iterator();ptr.hasNext()!=false;)
+		for (Iterator<String> ptr = users.iterator(); ptr.hasNext()!=false;)
 		{
 			System.out.printf("Member: %s\n",ptr.next());
 		}

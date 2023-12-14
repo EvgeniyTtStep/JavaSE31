@@ -1,5 +1,8 @@
 package org.itstep.Lesson34.Structural.Proxy.src;
 
+import java.util.HashSet;
+import java.util.Set;
+
 // ����� ������
 class MathematicsProxy implements IMathematics{
 
@@ -8,6 +11,7 @@ class MathematicsProxy implements IMathematics{
 	public MathematicsProxy() {
 		math = new Mathematics();
 	}
+
 
 	// �������� ������� ��������
 	@Override

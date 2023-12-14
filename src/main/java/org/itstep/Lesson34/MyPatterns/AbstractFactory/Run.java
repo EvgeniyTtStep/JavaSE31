@@ -10,5 +10,7 @@ public class Run {
      configCar.configCar(new MercedesFactory());
      configCar.carInfo();
 
+
+
     }
 }
